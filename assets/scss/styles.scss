@@ -7,7 +7,7 @@
 
     /*========== Colors ==========*/
     /* Change favorite color */
-    --hue-color: 250; /*Purple 250 - Green 142 - Blue 230 - Pink 340*/
+    --hue-color:19.6 /*Purple 250 - Green 142 - Blue 230 - Pink 340 Orange-19.6  */
 
     /* HSL color mode */
     --first-color: hsl(var(--hue-color), 69%, 61%);
@@ -116,6 +116,39 @@ h1,h2,h3,h4{
     color: var(--title-color);
     font-weight: var(--font-semi-bold);  
 }
+h6{
+    color: var(--title-color);
+    font-weight: var(--font-semi-bold);  
+    -webkit-text-stroke: 0.3vw #329d52;
+    text-transform: uppercase;
+}
+
+h6::before{
+    content: attr(data-text);
+
+    position: absolute;
+    top:0;
+    left:0;
+    width:0;
+    height:100%;
+    color: #01fe87;
+    -webkit-text-stroke: 0vw #383852;
+    border-right: 2px solid #01fe87;
+    overflow: hidden;
+    animation: animate 6s linear infinite;
+
+}
+
+@keyframes animate{
+
+    0%,10%,90%{
+        width:0;
+    }
+
+    70%,90%{
+        width:100%;
+    }
+}
 
 ul{
     list-style: none;
@@ -131,7 +164,7 @@ img{
 /*==================== REUSABLE CSS CLASSES ====================*/
 .section{
     padding: 2rem 0 4rem;
-
+    
     &__title{
         font-size: var(--h1-font-size);
         color: var(--title-color);
@@ -295,6 +328,7 @@ img{
     }
     &__title{
         font-size: var(--big-font-size);
+        
     }
     &__subtitle{
         font-size: var(--h3-font-size);
@@ -383,7 +417,7 @@ img{
         width: 200px;
         border-radius: .5rem;
         justify-self: center;
-        align-self: center;
+        
     }
     &__description{
         text-align: center;
